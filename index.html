@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b1210" />
+  <meta name="description" content="Неофициальный русский перевод Meltdown Crew для тестовой версии игры. Скачать русификатор и узнать об установке." />
+  <meta property="og:title" content="Meltdown Crew — русский перевод" />
+  <meta property="og:description" content="Неофициальная локализация для тестовой версии игры." />
+  <meta property="og:type" content="website" />
+  <title>Meltdown Crew — русский перевод | BySally</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0b1210;
+      --panel: #121c18;
+      --panel2: #17241d;
+      --line: rgba(184,216,179,.17);
+      --ink: #f4f7ee;
+      --muted: #a1afa4;
+      --green: #c9f57f;
+      --green-dim: rgba(201,245,127,.13);
+      --orange: #ebbc78;
+      --max: 1100px;
+    }
+    *, *::before, *::after {box-sizing: border-box}
+    html {scroll-behavior: smooth}
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse at 84% 14%, rgba(113,151,86,.15), transparent 39%),
+        radial-gradient(ellipse at 2% 60%, rgba(65,99,80,.10), transparent 34%),
+        var(--bg);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      line-height: 1.55;
+    }
+    a {color: inherit}
+    button, a { -webkit-tap-highlight-color: transparent }
+    a:focus-visible {outline: 2px solid var(--green); outline-offset: 5px; border-radius: 4px}
+    .container {width: min(var(--max), calc(100% - 44px)); margin: 0 auto}
+    .topline {height: 4px; background: repeating-linear-gradient(100deg, var(--green) 0px, var(--green) 50px, #82aa51 50px, #82aa51 54px, #0b1210 54px, #0b1210 60px)}
+    header {border-bottom: 1px solid var(--line)}
+    .nav {min-height: 84px; display: flex; align-items:center; justify-content:space-between; gap:20px}
+    .brand {display:flex; align-items:center; gap:13px; text-decoration:none; font-size:13px; font-weight:900; letter-spacing:.1em; line-height:1.18}
+    .brand-mark {width:40px; height:40px; display:grid; place-items:center; border:1px solid rgba(201,245,127,.48); border-radius:12px; color:var(--green); background:var(--green-dim); flex-shrink:0}
+    .brand small {display:block; color:var(--green); letter-spacing:.25em; font-weight:700; font-size:9px; margin-top:4px}
+    .nav-links {display:flex; align-items:center; gap:28px; font-size:13px; color:#cad6c8}
+    .nav-links a {text-decoration:none; transition:color .2s}
+    .nav-links a:hover {color:var(--green)}
+    .nav-links .nav-button {padding:10px 16px; border:1px solid var(--line); border-radius:8px; color:var(--ink); font-weight:700}
+    .nav-links .nav-button:hover {border-color:var(--green)}
+    .hero {display:grid; grid-template-columns:1.03fr .97fr; gap:52px; align-items:center; min-height:615px; padding:74px 0 66px}
+    .eyebrow {color:var(--green); font-size:11px; text-transform:uppercase; font-weight:800; letter-spacing:.22em; display:flex; align-items:center; gap:11px}
+    .eyebrow::before {content:""; width:25px; height:2px; background:var(--green)}
+    h1 {font-size:clamp(47px,6vw,80px); line-height:1.02; font-weight:900; letter-spacing:-.065em; margin:25px 0 22px}
+    h1 span {display:block; color:var(--green)}
+    .hero-text {color:#bdc9bf; font-size:16px; max-width:520px; margin:0 0 30px}
+    .pill-row {display:flex; flex-wrap:wrap; gap:9px; margin-bottom:33px}
+    .pill {display:inline-flex; align-items:center; gap:9px; padding:8px 11px; border-radius:100px; border:1px solid var(--line); font-size:11px; font-weight:700; letter-spacing:.07em; color:#d5e3d3}
+    .dot {width:7px; height:7px; border-radius:50%; background:var(--orange); box-shadow:0 0 0 3px rgba(235,188,120,.11)}
+    .pill.green .dot {background:var(--green); box-shadow:0 0 0 3px rgba(201,245,127,.12)}
+    .actions {display:flex; align-items:center; flex-wrap:wrap; gap:13px}
+    .primary {background:var(--green); color:#152014; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; gap:11px; padding:16px 22px; min-height:55px; font-weight:900; font-size:14px; border-radius:9px; transition:transform .2s, background .2s; box-shadow:0 12px 35px rgba(201,245,127,.08)}
+    .primary:hover {transform:translateY(-2px); background:#ddffa8}
+    .secondary {color:#e6ece2; text-decoration:none; border:1px solid var(--line); border-radius:9px; padding:15px 19px; min-height:55px; display:inline-flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; transition:border-color .2s}
+    .secondary:hover {border-color:#a6bc99}
+    .fine {font-size:12px; color:var(--muted); margin-top:19px; max-width:460px}
+    .art {position:relative; isolation:isolate; filter:drop-shadow(0 30px 60px rgba(0,0,0,.24))}
+    .art::before {content:""; position:absolute; inset:-17px -14px 16px 17px; border:1px solid rgba(201,245,127,.12); border-radius:22px; transform:rotate(3deg); z-index:-1}
+    .console {border-radius:19px; background:#18241e; border:1px solid #3b5040; overflow:hidden; box-shadow:inset 0 1px #546953,0 25px 75px rgba(0,0,0,.34)}
+    .console-top {display:flex; align-items:center; justify-content:space-between; padding:13px 18px; background:#1e2b23; border-bottom:1px solid #3a4b3a}
+    .console-label {font-family:ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing:.14em; color:#b7c8b2; font-size:10px; font-weight:700}
+    .leds {display:flex; gap:6px}
+    .leds i {width:7px; height:7px; border-radius:50%; display:block; background:#738070}
+    .leds i:first-child {background:var(--green); box-shadow:0 0 12px rgba(201,245,127,.6)}
+    .console-screen {margin:20px; border-radius:7px; padding:19px; background:#0b1711; border:1px solid #40563d; box-shadow:inset 0 0 32px rgba(43,75,39,.35); position:relative; overflow:hidden}
+    .console-screen::before {content:""; position:absolute; inset:0; background:repeating-linear-gradient(transparent 0 4px,rgba(201,245,127,.025) 4px 5px); pointer-events:none}
+    .screen-head {font-family:ui-monospace,monospace; display:flex; justify-content:space-between; gap:7px; color:#8dba83; font-size:10px; letter-spacing:.08em; margin-bottom:14px}
+    .gauge {width:100%; max-width:350px; margin:0 auto; display:block}
+    .screen-bottom {display:flex; justify-content:space-between; align-items:center; padding-top:14px; border-top:1px solid #324c35; margin-top:12px; font-family:ui-monospace,monospace; font-size:10px; color:#99b396; gap:10px}
+    .screen-bottom b {font-size:17px; color:var(--green); letter-spacing:.07em}
+    .control-row {display:grid; grid-template-columns:1fr 1fr 1fr; gap:11px; padding:0 20px 22px}
+    .control {border:1px solid #334638; background:#1d3023; padding:14px 10px; border-radius:7px; text-align:center}
+    .control span {font-family:ui-monospace,monospace; color:#93ac94; font-size:10px; display:block; margin-bottom:9px}
+    .lights {display:flex; gap:6px; justify-content:center}
+    .lights i {display:block; width:28px; height:7px; border-radius:2px; background:#4b5f45}
+    .lights i.active {background:var(--green); box-shadow:0 0 9px rgba(201,245,127,.25)}
+    .lights i.warn {background:var(--orange)}
+    .spec {padding:17px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
+    .spec-inner {display:flex; flex-wrap:wrap; justify-content:space-between; gap:18px 30px}
+    .spec-item {display:flex; align-items:center; gap:13px; font-size:13px; color:var(--muted)}
+    .spec-item strong {color:#eef6e8}
+    .spec-symbol {font-size:18px; font-weight:700; color:var(--green)}
+    .section {padding:95px 0}
+    .section-label {color:var(--green); text-transform:uppercase; font-size:11px; font-weight:900; letter-spacing:.2em; margin:0 0 11px}
+    h2 {font-size:clamp(28px,4vw,42px); line-height:1.15; letter-spacing:-.04em; margin:0 0 14px}
+    .section-intro {color:var(--muted); max-width:600px; margin:0}
+    .cards {display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:36px}
+    .card {background:linear-gradient(155deg,#17241c,#111b16); border:1px solid var(--line); border-radius:12px; padding:27px 25px; min-height:195px}
+    .number {font-family:ui-monospace,monospace; font-size:12px; color:var(--green); margin:0 0 29px}
+    .card h3 {font-size:17px; margin:0 0 9px}
+    .card p {margin:0; color:var(--muted); font-size:13px}
+    .download-box {background:linear-gradient(130deg, #1e3023, #15211a 65%); border:1px solid #47623d; border-radius:16px; padding:35px 38px; display:flex; justify-content:space-between; gap:30px; align-items:center; margin-top:30px}
+    .download-box h3 {font-size:25px; letter-spacing:-.025em; margin:0 0 9px}
+    .download-box p {color:#b4c6af; font-size:13px; margin:0; max-width:540px}
+    .download-actions {min-width:240px; text-align:right}
+    .download-actions .primary,.download-actions .secondary {width:100%}
+    .download-actions .secondary {margin-top:10px}
+    .download-actions .primary[aria-disabled="true"] {background:#5c7551; color:#d3dec9; cursor:not-allowed; pointer-events:none; box-shadow:none}
+    #download-status {font-size:12px; margin-top:10px; display:block; color:var(--muted)}
+    .foot {border-top:1px solid var(--line); padding:25px 0 35px; color:#8c9d8e; font-size:12px}
+    .footer-content {display:flex; align-items:center; justify-content:space-between; gap:20px}
+    .foot a {color:#c6d6c2; text-decoration:none}
+    .foot a:hover {color:var(--green)}
+    .footer-brand {color:var(--ink); font-weight:900; letter-spacing:.08em; margin-bottom:5px}
+    .disclaimer {max-width:650px}
+    @media(max-width:900px) {
+      .hero {gap:28px; grid-template-columns:1fr .87fr; min-height:auto; padding:66px 0}
+      h1 {font-size:clamp(42px,5.7vw,68px)}
+      .console-screen {margin:14px; padding:14px}
+      .control-row {padding:0 14px 14px; gap:6px}
+      .control {padding:12px 3px}
+      .lights i {width:17px}
+      .download-box {padding:28px}
+    }
+    @media(max-width:700px) {
+      .container {width:min(100% - 34px, var(--max))}
+      .nav {min-height:74px}
+      .nav-links {gap:13px}
+      .nav-links .nav-button {display:none}
+      .hero {grid-template-columns:1fr; gap:45px; padding:64px 0 60px}
+      .hero-text {font-size:15px}
+      .art {max-width:480px; width:100%; margin:0 auto}
+      .cards {grid-template-columns:1fr; gap:11px}
+      .card {min-height:unset; padding:24px}
+      .number {margin-bottom:18px}
+      .section {padding:70px 0}
+      .download-box {display:block}
+      .download-actions {text-align:left; min-width:0; margin-top:25px}
+      .footer-content {display:block}
+      .footer-brand {margin-bottom:10px}
+    }
+    @media(prefers-reduced-motion:reduce) {html {scroll-behavior:auto} .primary,.nav-links a,.secondary {transition:none}}
+  </style>
+</head>
+<body>
+  <div class="topline" aria-hidden="true"></div>
+  <header>
+    <nav class="nav container" aria-label="Главная навигация">
+      <a class="brand" href="#top" aria-label="Meltdown Crew RU — на главную">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="25" height="25" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.65"><circle cx="16" cy="16" r="3.3" fill="currentColor"/><ellipse cx="16" cy="16" rx="13.5" ry="5.6" transform="rotate(30 16 16)"/><ellipse cx="16" cy="16" rx="13.5" ry="5.6" transform="rotate(-30 16 16)"/><ellipse cx="16" cy="16" rx="13.5" ry="5.6" transform="rotate(90 16 16)"/></svg>
+        </span>
+        <span>MELTDOWN CREW <small>РУССКИЙ ПЕРЕВОД</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="#installation">Установка</a>
+        <a href="https://store.steampowered.com/app/5324440/Meltdown_Crew_Demo/" target="_blank" rel="noopener noreferrer">Игра в Steam ↗</a>
+        <a class="nav-button" href="#download">Скачать перевод</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="container">
+      <section class="hero" aria-labelledby="hero-heading">
+        <div>
+          <p class="eyebrow">НЕОФИЦИАЛЬНАЯ ЛОКАЛИЗАЦИЯ</p>
+          <h1 id="hero-heading">MELTDOWN<br/>CREW<span>НА РУССКОМ</span></h1>
+          <p class="hero-text">Фанатский русский перевод для тестовой версии Meltdown Crew. Управляйте реактором, координируйтесь с друзьями и разбирайтесь в происходящем на родном языке.</p>
+          <div class="pill-row">
+            <span class="pill green"><i class="dot" aria-hidden="true"></i>РУССКИЙ ЯЗЫК</span>
+            <span class="pill"><i class="dot" aria-hidden="true"></i>ДЛЯ БЕТА-ТЕСТА</span>
+          </div>
+          <div class="actions">
+            <a class="primary" href="#download">ПЕРЕЙТИ К СКАЧИВАНИЮ <span aria-hidden="true">↓</span></a>
+            <a class="secondary" href="#installation">Как установить</a>
+          </div>
+          <p class="fine">Проект сообщества. Не является официальной локализацией и не связан с разработчиками игры.</p>
+        </div>
+        <div class="art" aria-hidden="true">
+          <div class="console">
+            <div class="console-top"><div class="console-label">CONTROL UNIT · RU-01</div><div class="leds"><i></i><i></i><i></i></div></div>
+            <div class="console-screen">
+              <div class="screen-head"><span>СТАТУС РЕАКТОРА</span><span>СИСТЕМА ОНЛАЙН</span></div>
+              <svg class="gauge" viewBox="0 0 370 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs><linearGradient id="arc" x1="75" y1="220" x2="290" y2="60" gradientUnits="userSpaceOnUse"><stop stop-color="#7aaa60"/><stop offset="1" stop-color="#c9f57f"/></linearGradient></defs>
+                <circle cx="185" cy="130" r="95" stroke="#29402d" stroke-width="16" stroke-dasharray="444 160" transform="rotate(142 185 130)"/>
+                <circle cx="185" cy="130" r="95" stroke="url(#arc)" stroke-width="16" stroke-linecap="round" stroke-dasharray="344 260" transform="rotate(142 185 130)"/>
+                <circle cx="185" cy="130" r="72" stroke="#2d4631" stroke-width="1.5" stroke-dasharray="2 8"/>
+                <circle cx="185" cy="130" r="57" fill="#122219" stroke="#476647" stroke-width="1.5"/>
+                <circle cx="185" cy="130" r="8" fill="#c9f57f"/>
+                <ellipse cx="185" cy="130" rx="45" ry="17" stroke="#c9f57f" stroke-width="2" transform="rotate(55 185 130)"/>
+                <ellipse cx="185" cy="130" rx="45" ry="17" stroke="#c9f57f" stroke-width="2" transform="rotate(-55 185 130)"/>
+                <ellipse cx="185" cy="130" rx="45" ry="17" stroke="#c9f57f" stroke-width="2" transform="rotate(90 185 130)"/>
+                <text x="185" y="234" fill="#d3f2b6" font-family="monospace" font-size="11" text-anchor="middle" letter-spacing="2">МОДУЛЬ ЛОКАЛИЗАЦИИ</text>
+                <circle cx="84" cy="43" r="3" fill="#c9f57f"/><circle cx="287" cy="43" r="3" fill="#c9f57f"/>
+              </svg>
+              <div class="screen-bottom"><span>ЯЗЫК ИНТЕРФЕЙСА</span><b>РУССКИЙ</b></div>
+            </div>
+            <div class="control-row">
+              <div class="control"><span>КАНАЛ 01</span><div class="lights"><i class="active"></i><i class="active"></i><i></i></div></div>
+              <div class="control"><span>ПИТАНИЕ</span><div class="lights"><i class="active"></i><i class="active"></i><i class="active"></i></div></div>
+              <div class="control"><span>СИГНАЛ</span><div class="lights"><i class="active"></i><i class="warn"></i><i></i></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="spec"><div class="spec-inner container">
+      <div class="spec-item"><span class="spec-symbol">⌘</span><span>Игра: <strong>Meltdown Crew</strong></span></div>
+      <div class="spec-item"><span class="spec-symbol">◎</span><span>Язык: <strong>Русский</strong></span></div>
+      <div class="spec-item"><span class="spec-symbol">◈</span><span>Совместимость: <strong>тестовая версия</strong></span></div>
+      <div class="spec-item"><span class="spec-symbol">↧</span><span>Формат: <strong>ZIP-архив</strong></span></div>
+    </div></div>
+
+    <section class="section container" id="installation" aria-labelledby="install-heading">
+      <p class="section-label">01 / УСТАНОВКА</p>
+      <h2 id="install-heading">Всего несколько шагов</h2>
+      <p class="section-intro">Когда архив будет опубликован, скачайте его и следуйте приложенной инструкции. Способ установки зависит от содержимого перевода.</p>
+      <div class="cards">
+        <div class="card"><p class="number">ШАГ / 01</p><h3>Скачайте архив</h3><p>Используйте кнопку ниже, чтобы получить актуальную версию русификатора.</p></div>
+        <div class="card"><p class="number">ШАГ / 02</p><h3>Прочитайте инструкцию</h3><p>После публикации перевод будет сопровождаться инструкцией по установке.</p></div>
+        <div class="card"><p class="number">ШАГ / 03</p><h3>Запустите игру</h3><p>Проверяйте совместимость перевода с вашей версией Meltdown Crew.</p></div>
+      </div>
+    </section>
+
+    <section class="container" id="download" aria-labelledby="download-heading" style="padding-bottom:100px">
+      <p class="section-label">02 / ЗАГРУЗКА</p>
+      <h2 id="download-heading">Скачать русский перевод</h2>
+      <p class="section-intro">Архив появится здесь после публикации. Сайт автоматически проверяет новые версии на GitHub.</p>
+      <div class="download-box">
+        <div>
+          <h3 id="release-title">Meltdown Crew — RU</h3>
+          <p id="release-description">Проверяем доступность русификатора…</p>
+        </div>
+        <div class="download-actions">
+          <a class="primary" id="download-button" href="#download" aria-disabled="true" tabindex="-1"><span aria-hidden="true">↓</span> <span id="download-label">АРХИВ ГОТОВИТСЯ</span></a>
+          <a class="secondary" id="releases-link" href="https://github.com/BySally/Meltdown-Crew-RU/releases" target="_blank" rel="noopener noreferrer">Открыть GitHub ↗</a>
+          <span id="download-status" role="status" aria-live="polite">Ожидание публикации</span>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="foot"><div class="footer-content container">
+    <div><div class="footer-brand">MELTDOWN CREW · RU</div><div>Фанатская локализация · <a href="https://github.com/BySally">BySally</a></div></div>
+    <p class="disclaimer">Meltdown Crew и связанные с игрой материалы принадлежат их правообладателям. Этот сайт — независимый проект сообщества.</p>
+  </div></footer>
+
+  <script>
+    (() => {
+      'use strict';
+      const repo = 'BySally/Meltdown-Crew-RU';
+      const localArchive = 'Meltdown-Crew-RU.zip';
+      const button = document.querySelector('#download-button');
+      const label = document.querySelector('#download-label');
+      const title = document.querySelector('#release-title');
+      const description = document.querySelector('#release-description');
+      const status = document.querySelector('#download-status');
+      const releasesLink = document.querySelector('#releases-link');
+      releasesLink.href = 'https://github.com/' + repo + '/releases';
+
+      function ready(url, version, details) {
+        button.href = url;
+        button.removeAttribute('aria-disabled');
+        button.removeAttribute('tabindex');
+        label.textContent = 'СКАЧАТЬ РУСИФИКАТОР';
+        title.textContent = 'Meltdown Crew — RU' + (version ? ' · ' + version : '');
+        description.textContent = 'Русский перевод для тестовой версии игры. ' + (details || 'Перед установкой проверьте совместимость.');
+        status.textContent = 'Архив доступен для скачивания';
+      }
+      function unavailable() {
+        description.textContent = 'Архив ещё не опубликован. Кнопка скачивания станет доступна после его загрузки на GitHub.';
+        status.textContent = 'Ожидаем первую версию';
+      }
+      async function init() {
+        try {
+          const response = await fetch('https://api.github.com/repos/' + repo + '/releases?per_page=20', {
+            headers: {'Accept': 'application/vnd.github+json'}
+          });
+          if (response.ok) {
+            const releases = await response.json();
+            for (const release of releases) {
+              if (release.draft) continue;
+              const asset = (release.assets || []).find(a => /\.zip$/i.test(a.name) && a.browser_download_url);
+              if (asset) {
+                const size = asset.size ? 'Размер: ' + (asset.size / 1048576).toFixed(1).replace('.', ',') + ' МБ. ' : '';
+                ready(asset.browser_download_url, release.tag_name || '', size + 'Инструкция должна быть в архиве.');
+                return;
+              }
+            }
+          }
+        } catch (_) { /* Repos may be unavailable before publication. */ }
+        try {
+          const response = await fetch(localArchive, {method: 'HEAD', cache:'no-store'});
+          if (response.ok) {
+            ready(localArchive, '', 'Инструкция должна быть в архиве.');
+            return;
+          }
+        } catch (_) { /* Local preview or file not uploaded yet. */ }
+        unavailable();
+      }
+      init();
+    })();
+  </script>
+</body>
+</html>
