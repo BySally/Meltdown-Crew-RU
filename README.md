@@ -2,7 +2,7 @@
 
 Небольшой неофициальный сайт для распространения русификатора **Meltdown Crew** на период бета-тестирования. Автор публикации: **BySally**.
 
-**Сайт:** — https://bysally.github.io/Meltdown-Crew-RU/
+**Скачать:** — (https://github.com/BySally/Meltdown-Crew-RU/releases/download/v1.2/MeltdownCrew_RussianTranslation_v1.2.zip)
 
 ## Важно
 
