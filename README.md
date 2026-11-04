@@ -2,15 +2,7 @@
 
 Небольшой неофициальный сайт для распространения русификатора **Meltdown Crew** на период бета-тестирования. Автор публикации: **BySally**.
 
-**Сайт:** после включения GitHub Pages — https://bysally.github.io/Meltdown-Crew-RU/
-
-## Как запустить сайт на GitHub
-
-1. Создай **публичный** репозиторий с названием `Meltdown-Crew-RU` в аккаунте `BySally`: https://github.com/new
-2. Загрузи в корень репозитория файлы `index.html`, `favicon.svg`, `.nojekyll`, `README.md` через **Add file → Upload files**. Не загружай вложенную папку — эти файлы должны лежать в корне.
-3. Открой **Settings → Pages → Build and deployment**.
-4. В поле **Source** выбери **Deploy from a branch**; затем `main` и `/(root)`; нажми **Save**.
-5. Открой https://bysally.github.io/Meltdown-Crew-RU/ (публикация GitHub Pages может занять некоторое время).
+**Сайт:** — https://bysally.github.io/Meltdown-Crew-RU/
 
 ## Как добавить архив перевода
 
